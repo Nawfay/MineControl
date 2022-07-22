@@ -76,3 +76,9 @@ for await (const req of server) {
     req.respond(content)
   }
 }
+
+function test() {
+  console.log("");
+
+ const content = await serveFile(req, path);
+}

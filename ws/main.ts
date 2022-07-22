@@ -32,7 +32,6 @@ async function autoSend(socket: WebSocket) {
 
 const handleSocket = async (socket: WebSocket) => {
 
-
   socket.addEventListener("close", () => {
     console.log("Socket closed");
   });
@@ -49,6 +48,8 @@ const handleSocket = async (socket: WebSocket) => {
       socket.send("pong");
     } else if (e.data === "pong") {
       socket.close();
+    }else{
+      socket.send(e.data)
     }
   })
 }
